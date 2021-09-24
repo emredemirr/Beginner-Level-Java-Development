@@ -10,12 +10,9 @@ public class DaireAlanCevreHesaplama
         System.out.print("Yarıçapı Giriniz: ");
         yariCap = input.nextInt();
 
-
         alan = pi*yariCap*yariCap;
         cevre = 2*pi*yariCap;
         System.out.println("Dairenin Alanı: "+alan);
         System.out.println("Dairenin Çevresi: "+cevre);
-
-
     }
 }
