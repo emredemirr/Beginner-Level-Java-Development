@@ -11,12 +11,12 @@ public class TekSayilarinToplami
         {
             System.out.print("Sayi Giriniz: ");
             n = input.nextInt();
-            if (n %2 == 1)
+            if (n %4 == 0)
             {
                 total+=n;
             }
         }
-        while (n>0);
+        while (n%2==1);
 
         System.out.println("Toplam:" + total);
     }
