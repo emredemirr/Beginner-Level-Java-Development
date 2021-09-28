@@ -4,17 +4,20 @@ public class CiftSayiBulma
 {
     public static void main(String[] args) {
 
-        int k;
+        int k,sayac=0;
+        double ort=0;
         Scanner input = new Scanner(System.in);
         System.out.print("Sayıyı Girin: ");
         k = input.nextInt();
-
         for (int i = 1;i<k;i++)
         {
-            if (i%2 == 0)
+            if (i%3 == 0 && i%4==0)
             {
-                System.out.println(i);
+                sayac++;
+                ort += i;
+
             }
         }
+        System.out.println(ort/sayac);
     }
 }
