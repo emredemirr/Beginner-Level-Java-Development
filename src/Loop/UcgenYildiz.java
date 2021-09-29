@@ -18,7 +18,7 @@ public class UcgenYildiz
             }
             for (int k =1;k<=(2*i)-1;k++)
             {
-                System.out.print("emre");
+                System.out.print("x");
             }
             System.out.println(" ");
         }
