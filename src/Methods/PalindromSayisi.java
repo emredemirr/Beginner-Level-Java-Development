@@ -1,6 +1,6 @@
 package Methods;
 
-public class PalindromicNumber
+public class PalindromSayisi
 {
     static boolean isPalindrom(int number)
     {
@@ -11,13 +11,11 @@ public class PalindromicNumber
             reverseNumber = (reverseNumber*10)+lastNumber;
             temp /= 10;
         }
-
         if (number== reverseNumber)
             return true;
         else
             return false;
     }
-
     public static void main(String[] args)
     {
         if (isPalindrom(2552))
