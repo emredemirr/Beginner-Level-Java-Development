@@ -1,3 +1,8 @@
+/*
+ *  Link       : https://app.patika.dev/courses/java101
+ *  @author    : Emre Demir
+ *  Repository : https://github.com/emredemirr/Java101
+ */
 package Loop;
 import java.util.Scanner;
 public class UsBulma

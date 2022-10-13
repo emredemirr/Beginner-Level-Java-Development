@@ -1,3 +1,9 @@
+/*
+ *  Link       : https://app.patika.dev/courses/java101
+ *  @author    : Emre Demir
+ *  Repository : https://github.com/emredemirr/Java101
+ */
+
 package ConditionalExpressions;
 import java.util.Scanner;
 
