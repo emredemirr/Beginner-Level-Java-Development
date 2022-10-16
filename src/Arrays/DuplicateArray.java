@@ -1,6 +1,6 @@
 package Arrays;
 
-public class RepeatNumberArray
+public class DuplicateArray
 {
     public static boolean isFind(int[] arr, int value)
     {
