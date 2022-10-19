@@ -1,3 +1,10 @@
+/*
+ *  Link       : https://www.hackerrank.com/challenges/java-if-else/problem
+ *  @author    : Emre Demir
+ *  Repository : https://github.com/emredemirr/Java101
+ *  Hackerrank : https://www.hackerrank.com/emreedemir
+ */
+
 package Hackerrank;
 
 import java.util.*;
