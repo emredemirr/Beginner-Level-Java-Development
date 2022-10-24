@@ -1,117 +1,157 @@
 package FinalProject;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class MineSweeper
 {
-    public static void main(String[] args)
+    int row;
+    int column;
+    String[][] mineMap;
+    String[][] gameMap;
+    int mineNumber;
+    int a;
+    int b;
+    int count;
+    boolean isTrue = true;
+
+
+    public MineSweeper(int row, int col)
     {
-        Scanner scan = new Scanner(System.in);
-        System.out.print("Satır Sayısını Giriniz: ");
-        int row = scan.nextInt();
-        System.out.print("Sütun Sayısını Giriniz: ");
-        int col = scan.nextInt();
+        this.row = row;
+        this.column = column;
+        this.gameMap = new String[row][col];
+        this.mineMap = new String[row][col];
+        this.mineNumber = (row * col) / 4;
+    }
 
-        char [][] arr = new char[row][col];
-        char [][] mineLocation = new char[row][col];
-        char sign = '-', mine = '*';
-        int mineNumber = (row*col)/4;
-        int randomRow, randomCol, step = 0;
-
-        for (int i = 0; i<mineNumber;i++)
+    public void mineMap()
+    {
+        for (int i = 0; i < this.row; i++)
         {
-            randomRow = (int) (Math.random()*row);
-            randomCol = (int) (Math.random()*col);
-
-            if (mineLocation[randomRow][randomCol] == '*')
-                i--;
-            else
-                mineLocation[randomRow][randomCol] = mine;
-
-        }
-        System.out.println("Mayınların Konumu");
-        for (int i = 0; i<arr.length;i++)
-        {
-            for (int j=0;j<arr[i].length;j++)
+            for (int j = 0; j < this.column; j++)
             {
-                if (mineLocation[i][j] == mine)
-                    arr[i][j] = mineLocation[i][j];
-                else
-                    arr[i][j] = sign;
+                this.mineMap[i][j] = "-";
+                this.gameMap[i][j] = "-";
+            }
+        }
+    }
 
-                System.out.print(arr[i][j]+" ");
+    public void randomNumber()
+    {
+        Random random = new Random();
+        for (int i = 0; i < this.mineNumber; i++)
+        {
+            int rsayi = random.nextInt(this.row);
+            int rsayi2 = random.nextInt(this.column);
+            if (!this.mineMap[rsayi][rsayi2].equals("*"))
+                this.mineMap[rsayi][rsayi2] = "*";
+        }
+    }
+
+    public void printMap()
+    {
+        System.out.println("Mayinlarin Konumu");
+        randomNumber();
+        for (int i = 0; i < this.row; i++)
+        {
+            for (int j = 0; j < this.column; j++)
+            {
+                if (!this.mineMap[i][j].equals("*"))
+                    this.mineMap[i][j] = "-";
+
+                System.out.print(this.mineMap[i][j] + " ");
             }
             System.out.println();
         }
-        System.out.println("=====================");
-
-        System.out.println("Mayın Tarlası Oyununa Hoşgeldiniz! ");
-        for (int x =0; x< row*col;x++)
-        {
-            System.out.print("Satır Giriniz: ");
-            int choseRow = scan.nextInt();
-            System.out.print("Sütun Giriniz: ");
-            int choseCol = scan.nextInt();
-
-            if (choseRow >=0 && choseRow<=row && choseCol>=0 && choseCol <= col)
-            {
-                if (arr[choseRow][choseCol] == mine)
-                {
-                    System.out.println(">>Game Over<<");
-                    System.out.println("Mayınların Konumu");
-                    for (int i = 0; i<arr.length;i++)
-                    {
-                        for (int j=0;j<arr[i].length;j++)
-                        {
-                            System.out.print(arr[i][j]+" ");
-                        }
-                        System.out.println();
-                    }
-                    break;
-                }
-                else if (arr[choseRow][choseCol] == sign)
-                {
-                    for (int i =-1; i<2;i++)
-                    {
-                        for (int j =-1;j<2;j++)
-                        {
-                            if (arr[choseRow+i][choseCol+j] == mine && i != 0 && j != 0)
-                                step++;
-                        }
-                    }
-
-                    if (step ==0)
-                        arr[choseRow][choseCol] = '0';
-                    else if (step==1)
-                        arr[choseRow][choseCol] = '1';
-                    else if (step == 2)
-                        arr[choseRow][choseCol] = '2';
-                    else if (step == 3)
-                        arr[choseRow][choseCol] = '3';
-
-
-                    for (int i = 0; i<arr.length;i++)
-                    {
-                        for (int j=0;j<arr[i].length;j++)
-                        {
-                            System.out.print(arr[i][j]+" ");
-
-                        }
-                        System.out.println();
-                    }
-                    System.out.println("Step: "+step);
-
-                }
-            }
-            else
-            {
-                System.out.println("Dizi Dışında Değer Girdiniz ! Tekrar Deneyin.");
-            }
-
-            System.out.println("========================");
-        }
-
-
+        System.out.println("==================================");
+        System.out.println("Mayın Tarlası Oyununa Hoşgeliniz !");
     }
 
+    public void printGameMap()
+    {
+        for (int i = 0; i < this.row; i++)
+        {
+            for (int j = 0; j < this.column; j++)
+            {
+                this.gameMap[i][j] = "-";
+                System.out.print(this.gameMap[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    public void choice() {
+        Scanner inp = new Scanner(System.in);
+        isTrue = false;
+        while (!isTrue) {
+            System.out.print("Satir Giriniz : ");
+            a = inp.nextInt();
+            System.out.print("Sutun Giriniz : ");
+            b = inp.nextInt();
+            if (a > row || b > column)
+            {
+                System.out.println("Map sinirlari disinda secim yaptınız tekrar giriniz !");
+                continue;
+            }
+            if (mineMap[a][b].equals("*"))
+            {
+                System.out.println("Game Over!");
+                break;
+            }
+            control();
+            if (finish())
+            {
+                System.out.println("Tebrikler kazandınız :)))))");
+                break;
+            }
+        }
+    }
+
+    public void control()
+    {
+        count = 0;
+        for (int i=(a-1);i<=(a+1);i++)
+        {
+            for (int j=(b-1); j<=(b+1); j++)
+            {
+                if (i<0 || j<0 || i>=this.row || j>=this.column)
+                    continue;
+
+                if (this.mineMap[i][j].equals("*"))
+                    count++;
+
+            }
+        }
+
+        this.gameMap[a][b] = String.valueOf(count);
+        this.mineMap[a][b] = String.valueOf(count);
+
+        for (int i=0; i<this.row; i++) {
+            for (int j = 0; j < this.column; j++)
+            {
+                System.out.print(this.gameMap[i][j] + " ");
+            }
+            System.out.println("");
+        }
+    }
+
+    public boolean finish()
+    {
+        for (int i = 0; i < this.row; i++)
+        {
+            for (int j = 0; j < this.column; j++)
+            {
+                if (this.mineMap[i][j].equals("-"))
+                    return false;
+            }
+        }
+        return true;
+    }
+    public void run()
+    {
+        mineMap();
+        printMap();
+        choice();
+    }
 }
