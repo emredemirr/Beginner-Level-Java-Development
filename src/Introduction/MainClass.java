@@ -3,7 +3,7 @@
  *  @author    : Emre Demir
  *  Repository : https://github.com/emredemirr/Java101
  */
-package Giris;
+package Introduction;
 
 public class MainClass
 {

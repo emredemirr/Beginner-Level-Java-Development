@@ -3,8 +3,7 @@
  *  @author    : Emre Demir
  *  Repository : https://github.com/emredemirr/Java101
  */
-package TemelKavramlar;
-import javax.sound.midi.Soundbank;
+package Fundamentals;
 import java.util.Scanner;
 
 public class VkiHesaplama

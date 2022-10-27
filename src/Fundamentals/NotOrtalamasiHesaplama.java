@@ -3,9 +3,7 @@
  *  @author    : Emre Demir
  *  Repository : https://github.com/emredemirr/Java101
  */
-package TemelKavramlar;
-
-import com.sun.security.jgss.GSSUtil;
+package Fundamentals;
 
 import java.util.Scanner;
 

@@ -42,7 +42,7 @@ public class StringClass
         System.out.println(str.endsWith(" "));
 
         // Karakter dizisinin karakterlerini temsil eden bir dizi döndürür.
-        System.out.println(str.copyValueOf());
+        //System.out.println(str.copyValueOf());
 
         // İki stringi karşılaştırır. Eşitse true, değilse false döndürür.
         System.out.println(str.equals("patika"));
@@ -54,7 +54,7 @@ public class StringClass
         System.out.println(str.getBytes());
 
         // Karakterleri bir dizeden bir karakter dizisine kopyalar
-        System.out.println(str.getChars());
+        //System.out.println(str.getChars());
 
         // Bir dizenin karma kodunu veri
         System.out.println(str.hashCode());

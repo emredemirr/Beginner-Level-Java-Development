@@ -3,7 +3,7 @@
  *  @author    : Emre Demir
  *  Repository : https://github.com/emredemirr/Java101
  */
-package TemelKavramlar;
+package Fundamentals;
 
 public class Degiskenler
 {
