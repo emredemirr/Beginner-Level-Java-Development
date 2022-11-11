@@ -53,10 +53,10 @@ Completed Modules:
   - [x] Abstraction
   - [x] UML Modeling
 -  [x] Data Structure and Algorithms
-  - [x] Data Structure (Array, Linked List, Stack, Queue, Hash Table, Hash Function, Hash Collision)
-  - [x] Algorithm Analysis (Time Complexity, Big O Notation)
-  - [x] Sorting Algorithm  (Selection Sort, Merge Sort, Quick Sort)
-  - [x] Searching Algorithm  (Linear Search, Binary Search, Binary Search Tree)
+    - [x] Data Structure (Array, Linked List, Stack, Queue, Hash Table, Hash Function, Hash Collision)
+    - [x] Algorithm Analysis (Time Complexity, Big O Notation)
+    - [x] Sorting Algorithm  (Selection Sort, Merge Sort, Quick Sort)
+    - [x] Searching Algorithm  (Linear Search, Binary Search, Binary Search Tree)
 - [x] Essential Lessons
 - [x] Visual Studio Code
 - [x] GIT
